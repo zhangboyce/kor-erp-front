@@ -1,0 +1,123 @@
+
+.sidebar .section {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 10px 30px;
+  color: @grey;
+  font-family: NotoSansCJKkr-Bold sans-serif;
+}
+
+.sidebar .section span {
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-size: 15px;
+  cursor: pointer;
+
+  &:hover {
+    color: @tealish;
+  }
+}
+
+.sidebar .section span i {
+  position: absolute;
+  right: 0;
+  top: 7px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  border: 2px solid currentColor;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: translate(-50%, -50%) rotate(135deg);
+    transition: all .2s ease-in;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+  }
+}
+
+.sidebar .section .collapse {
+  position: relative;
+  display: none;
+  padding: 0 10px 10px;
+
+  //&::before,
+  //&::after {
+  //  content: '';
+  //  position: absolute;
+  //  width: @sidebar-width;
+  //  height: 1px;
+  //  left: -30px;
+  //  background: @grey;
+  //}
+  //&::before {
+  //  bottom: 0;
+  //}
+  //&::after {
+  //  top: 0;
+  //}
+
+  &.show {
+    display: block;
+  }
+  &.show + span {
+    color: @tealish;
+
+    i {
+      &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.sidebar .section .collapse a {
+  position: relative;
+  text-decoration: none;
+  font-size: 13px;
+  color: @grey;
+  margin: 10px 4px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    bottom: 0;
+    left: -4px;
+    background: @tealish;
+    transform: scaleY(0);
+    transform-origin: left bottom;
+    transition: all 0.3s ease-out;
+  }
+
+  &::after {
+    content: '\A';
+    white-space: pre;
+  }
+
+  &:hover {
+    color: @tealish;
+    &::before {
+      transform: scaleY(1);
+      transform-origin: left top;
+    }
+  }
+}

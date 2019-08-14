@@ -1,0 +1,8 @@
+{% if bars.length != 0%}
+<div>
+    {% for bar in bars %}
+    {% set currentClass = 'current' if bar==current else '' %}
+    <span class="bar {{ currentClass }}" data-name="{{ bar }}"><a href="javascript:;">{{ bar }}</a><i class="close"></i></span>
+    {% endfor %}
+</div>
+{% endif %}

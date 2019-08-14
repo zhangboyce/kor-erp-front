@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+  height: @header-height;
+  border: solid 1px #e5e5e5;
+}
+
+.main {
+  width: 100%;
+  height: calc(~"100% - @{header-height}");
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar {
+  width: @sidebar-width;
+  height: 100%;
+  border: solid 1px #e5e5e5;
+  border-top: none;
+  overflow-y: scroll;
+}
+
+.content {
+  background: #f9fafc;
+  width: calc(~"100% - @{sidebar-width}");
+  height: 100%;
+}

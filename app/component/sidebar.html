@@ -1,0 +1,12 @@
+<div>
+    {% for menu in menus %}
+    <div class="section">
+        <div class="collapse">
+            {% for subMenu in menu.children %}
+            <a href="#{{ subMenu.href }}?name={{ subMenu.name }}">{{ subMenu.name }}</a>
+            {% endfor %}
+        </div>
+        <span>{{ menu.name }}<i></i></span>
+    </div>
+    {% endfor %}
+</div>
