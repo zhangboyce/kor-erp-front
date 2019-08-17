@@ -55,12 +55,17 @@
 
 .sidebar .section .collapse {
   position: relative;
-  display: none;
-  padding: 0 10px 10px;
+  opacity: 0;
+  height: auto;
+  max-height: 0;
+  margin: 0 10px 10px;
   font-family: NotoSansCJKkr-Medium, sans-serif;
+  transition: all .5s linear;
+  overflow: hidden;
 
   &.show {
-    display: block;
+    opacity: 1;
+    max-height: 200px;
   }
   &.show + span {
     color: @tealish;
@@ -89,8 +94,8 @@
     left: -4px;
     background: @tealish;
     transform: scaleY(0);
-    transform-origin: left bottom;
-    transition: all 0.3s ease-out;
+    transform-origin: top;
+    transition: all 0.5s ease-out;
   }
 
   &::after {
@@ -102,7 +107,7 @@
     color: @tealish;
     &::before {
       transform: scaleY(1);
-      transform-origin: left top;
+      transform-origin: bottom;
     }
   }
 }
