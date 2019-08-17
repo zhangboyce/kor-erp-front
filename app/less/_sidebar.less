@@ -4,7 +4,7 @@
   flex-direction: column-reverse;
   margin: 10px 30px;
   color: @grey;
-  font-family: NotoSansCJKkr-Bold sans-serif;
+  font-family: NotoSansCJKkr-Bold, sans-serif;
 }
 
 .sidebar .section span {
@@ -57,22 +57,7 @@
   position: relative;
   display: none;
   padding: 0 10px 10px;
-
-  //&::before,
-  //&::after {
-  //  content: '';
-  //  position: absolute;
-  //  width: @sidebar-width;
-  //  height: 1px;
-  //  left: -30px;
-  //  background: @grey;
-  //}
-  //&::before {
-  //  bottom: 0;
-  //}
-  //&::after {
-  //  top: 0;
-  //}
+  font-family: NotoSansCJKkr-Medium, sans-serif;
 
   &.show {
     display: block;
@@ -99,7 +84,7 @@
     content: '';
     position: absolute;
     height: 100%;
-    width: 1px;
+    width: 2px;
     bottom: 0;
     left: -4px;
     background: @tealish;

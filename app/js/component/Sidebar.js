@@ -16,7 +16,8 @@ export default class Sidebar {
 
     created() {
         this.parent.find('.section span').click(function (e) {
-            $(this).siblings('.collapse').toggleClass('show');
+            let $collapse = $(this).siblings('.collapse');
+            $collapse.toggleClass('show');
         });
     }
 }

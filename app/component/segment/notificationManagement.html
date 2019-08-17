@@ -1,3 +1,20 @@
-<div>
-    notificationManagement
+<div class="notification-management">
+    <div class="panel">
+        {% if notifications and notifications.length != 0 %}
+            {% for nt in notifications %}
+            <div class="nt-item">
+                <span class="title">{{ nt.title }}</span>
+                <span class="date">{{ nt.date }}</span>
+            </div>
+            {% endfor %}
+            <div class="nt-item">
+                {% include '/include/__pagination__.html' %}
+            </div>
+        {% else %}
+            <div class="nt-item">
+                No result.
+            </div>
+        {% endif %}
+
+    </div>
 </div>

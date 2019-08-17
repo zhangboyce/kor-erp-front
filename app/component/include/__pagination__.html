@@ -1,0 +1,18 @@
+{% if pagination.pageNumbers.length > 1 %}
+<div class="pagination">
+    <div>
+        <a class="page-num {{ 'disabled' if (1 == pagination.currentPage) else '' }}" data-page="{{ 1 }}" href="javascript:void(0);" >&laquo;</a>
+
+        {% for i in pagination.pageNumbers %}
+        <a class="page-num {{ 'active' if (i == pagination.currentPage) else '' }}" href="javascript:void(0);" data-page="{{ i }}" >{{ i }}</a>
+        {% endfor %}
+
+        <a href="javascript:void(0);" class="disabled">{{ pagination.currentPage + '/' + pagination.totalPage }}</a>
+        <a class="page-num {{ 'disabled' if (pagination.totalPage == pagination.currentPage) else '' }}" data-page="{{ pagination.totalPage }}" href="javascript:void(0);" >&raquo;</a>
+    </div>
+    <div>
+        <a class="page-num prev-page {{ 'disabled' if (1 == pagination.currentPage) else '' }}" data-page="{{ pagination.currentPage - 1 }}" href="javascript:void(0);" >이전 페이지</a>
+        <a class="page-num next-page {{ 'disabled' if (pagination.totalPage == pagination.currentPage) else '' }}" data-page="{{ pagination.currentPage + 1 }}" href="javascript:void(0);" >다음 페이지</a>
+    </div>
+</div>
+{% endif %}

@@ -4,5 +4,36 @@
 }
 
 .segment {
+  height: calc(~"100% - 53px");
   color: black;
+  overflow-y: scroll;
+}
+
+.notification-management .panel {
+  width: 95%;
+  height: auto;
+  border: 1px solid @light-grey;
+  border-radius: 10px;
+  background: #fff;
+  margin: 30px auto;
+}
+
+.notification-management .panel .nt-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  font-size: 14px;
+  font-family: SpoqaHanSansJP-Regular, sans-serif;
+  border-bottom: 1px solid #e6eaee;
+  color: #666;
+  transition: all 0.2s ease-in;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: #f2f3f5;
+  }
 }

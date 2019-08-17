@@ -1,7 +1,8 @@
 .header {
   width: 100%;
+  padding: 30px;
   height: @header-height;
-  border: solid 1px #e5e5e5;
+  border-bottom: solid 1px #e5e5e5;
 }
 
 .main {
@@ -18,11 +19,12 @@
   height: 100%;
   border: solid 1px #e5e5e5;
   border-top: none;
+  border-left: none;
   overflow-y: scroll;
 }
 
 .content {
+  height: 100%;
   background: #f9fafc;
   width: calc(~"100% - @{sidebar-width}");
-  height: 100%;
 }
