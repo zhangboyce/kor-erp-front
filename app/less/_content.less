@@ -1,3 +1,7 @@
+@import "__notification-management";
+@import "__as-management";
+@import "__contract-management";
+
 .content {
   position: relative;
   background: #f9fafc;
@@ -9,7 +13,7 @@
   overflow-y: scroll;
 }
 
-.notification-management .panel {
+.segment .panel {
   width: 95%;
   height: auto;
   border: 1px solid @light-grey;
@@ -18,22 +22,92 @@
   margin: 30px auto;
 }
 
-.notification-management .panel .nt-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 30px;
-  font-size: 14px;
-  font-family: SpoqaHanSansJP-Regular, sans-serif;
-  border-bottom: 1px solid #e6eaee;
-  color: #666;
-  transition: all 0.2s ease-in;
-
-  &:last-child {
-    border-bottom: none;
+.segment label {
+  &.wrap:after {
+    content: '\A';
+    white-space: pre;
   }
 
-  &:hover {
-    background: #f2f3f5;
+  &.wrap + label {
+    display: inline-block;
+    margin-top: 30px;
+  }
+}
+
+.segment input,
+.segment .select-wrapper {
+  position: relative;
+  display: inline-block;
+  color: #666;
+  min-width: 156px;
+  height: 40px;
+  border-radius: 10px;
+  border: solid 1px #c1c1c1;
+  background-color: #ffffff;
+  margin-right: 30px;
+  margin-left: 10px;
+}
+
+.segment .select-wrapper {
+  &::after {
+    color: inherit;
+    content: '▾';
+    margin-right: 10px;
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+  }
+
+  & select {
+    color: inherit;
+    -webkit-appearance: none;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    &:focus {
+      color: black;
+    }
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}
+
+.segment table {
+  width: 100%;
+  border-top: 1px solid @light-grey;
+  border-left: 1px solid @light-grey;
+  & th,
+  & td {
+    padding: 10px;
+    border-bottom: 1px solid @light-grey;
+    border-right: 1px solid @light-grey;
+  }
+}
+
+.segment button {
+  background: #f8f8f8;
+  color: #666;
+  border: 1px solid @grey;
+  //border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 0 4px;
+
+  transition: all .2s ease-in;
+
+  &.disabled {
+    color: @grey;
+    border-color: @light-grey;
+  }
+
+  &:not(.disabled):hover {
+    color: #fff;
+    background: @tealish;
+    border-color: @tealish;
   }
 }

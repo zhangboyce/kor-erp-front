@@ -1,3 +1,52 @@
-<div>
-    contractManagement
+<div class="contract-management">
+    <div class="panel">
+        <div>
+            <label>
+                연도
+                <div class="select-wrapper">
+                    <select name="year">
+                        {% for year in years %}
+                        <option value="{{ year }}" {{ 'selected' if (year == selectedYear) else '' }}>{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </label>
+            <label>
+                시즌
+                <div class="select-wrapper">
+                    <select name="quarter">
+                        {% for quarter in quarters %}
+                        <option value="{{ quarter }}" {{ 'selected' if (quarter == selectedQuarter) else '' }}>{{ quarter }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </label>
+        </div>
+        <div class="table">
+            <div>
+                <button id="add">추가</button>
+                <button id="edit" class="{{ 'disabled' if(current == null) else '' }}">고치다</button>
+                <button id="delete" class="{{ 'disabled' if(current == null) else '' }}">삭제</button>
+            </div>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>id</th>
+                    <th>거래처명</th>
+                    <th>제작연도</th>
+                    <th>제작연도</th>
+                </tr>
+                {% for item in results %}
+                <tr data-id="{{ item.id }}" class="{{ 'current' if (current == item.id) else '' }}">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.consumer }}</td>
+                    <td>{{ item.year }}</td>
+                    <td>{{ item.quarter }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="page">
+            {% include '/include/__pagination__.html' %}
+        </div>
+    </div>
 </div>

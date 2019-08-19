@@ -30,8 +30,6 @@ export default class NotificationManagement extends Segment {
 
     init() {
         let { notifications, pagination } = this.__loadData__(1);
-        console.log(notifications);
-
         this.flush({ notifications, pagination });
     }
 

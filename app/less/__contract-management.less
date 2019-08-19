@@ -1,0 +1,62 @@
+.contract-management {
+  color: #000;
+  font-size: 14px;
+  font-family: NotoSansCJKkr-Regular, sans-serif;
+}
+
+.contract-management .panel {
+  padding: 30px;
+}
+
+.contract-management .panel > div:first-child {
+  padding-bottom: 30px;
+  border-bottom: 1px solid @light-grey;
+}
+
+.contract-management .page {
+  margin-top: 30px;
+}
+
+.contract-management .table {
+  margin-top: 30px;
+  & table {
+    & th {
+      background: #f2f2f2;
+    }
+    & tr {
+      height: 40px;
+
+      & td {
+        width: 30%;
+        &:first-child{
+          width: 10%;
+        }
+      }
+
+      &:not(:first-child) {
+        cursor: pointer;
+        &:hover {
+          color: #fff;
+          background: fade(@tealish, 60%);
+        }
+        &.current {
+          color: #fff;
+          background: @tealish;
+        }
+      }
+    }
+  }
+}
+
+.contract-management .table > div:first-child {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.contract-management .modal-footer button {
+  width: 100%;
+  background: @tealish;
+  color: #fff;
+}

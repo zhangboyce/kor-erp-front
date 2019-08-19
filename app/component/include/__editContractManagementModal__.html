@@ -1,0 +1,42 @@
+<div id="edit-contract-management-modal" class="modal edit-contract-management-modal">
+    <div class="modal-wrapper">
+        <i class="close"></i>
+        <div class="modal-content">
+            <label class="wrap">
+                id
+                <input disabled type="text" name="id" value="{{ item.id }}"/>
+            </label>
+            <label>
+                연도
+                <div class="select-wrapper">
+                    <select disabled name="year">
+                        {% for year in years %}
+                        <option value="{{ year }}" {{ 'selected' if (year == item.year) else '' }}>{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </label>
+            <label class="wrap">
+                시즌
+                <div class="select-wrapper">
+                    <select disabled name="quarter">
+                        {% for quarter in quarters %}
+                        <option value="{{ quarter }}" {{ 'selected' if (quarter == item.quarter) else '' }}>{{ quarter }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </label>
+            <label>
+                거래처명
+                <input disabled type="text" name="consumer" value="{{ item.consumer }}"/>
+            </label>
+            <label class="wrap">
+                이미지
+                <input type="text" name="image" value="{{ item.image }}"/>
+            </label>
+        </div>
+        <div class="modal-footer">
+            <button>확인</button>
+        </div>
+    </div>
+</div>
