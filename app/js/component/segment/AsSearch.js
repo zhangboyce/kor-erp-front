@@ -5,6 +5,11 @@ export default class AsSearch extends Segment {
         super(parent, 'segment/asSearch.html');
     }
 
+    init() {
+        let data = '';
+        this.flush(data);
+    }
+
     mounted() {
         console.log('AsSearch mounted')
     }

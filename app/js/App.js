@@ -53,3 +53,6 @@ export default class App {
         }
     }
 }
+
+
+import { host } from 'js/request'

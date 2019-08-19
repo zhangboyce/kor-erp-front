@@ -49,9 +49,7 @@ export default class ContractManagement extends Segment {
     }
 
     init() {
-        this.__loadData__(1, this.selectedYear, this.selectedQuarter, () => {
-            this.__flush__();
-        });
+        this.__loadData__(1, this.selectedYear, this.selectedQuarter);
     }
 
     __flush__() {
