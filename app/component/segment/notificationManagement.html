@@ -1,4 +1,8 @@
 <div class="notification-management">
+    <button id="Warn" type="button">Warn</button>
+    <button id="Normal" type="button" >Normal</button>
+    <button id="Error" type="button" >Error</button>
+    <button id="Success" type="button" >Success</button>
     <div class="panel">
         {% if notifications and notifications.length != 0 %}
             {% for nt in notifications %}
@@ -15,6 +19,5 @@
                 No result.
             </div>
         {% endif %}
-
     </div>
 </div>

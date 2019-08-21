@@ -14,8 +14,19 @@ export default class App {
         this.$segment = $('#segment');
     }
 
+    /**
+     * @param type: normal, success, error, warn
+     * @param message
+     */
+    popover(type, message) {
+        $('#popover').remove();
+        let popover = window.nunjucks.render('include/__popover__.html', { type, message });
+        $('body').append(popover);
+    }
+
     init() {
         this.listenHashChange();
+        return this;
     }
 
     configNunjucks() {
@@ -53,6 +64,3 @@ export default class App {
         }
     }
 }
-
-
-import { host } from 'js/request'

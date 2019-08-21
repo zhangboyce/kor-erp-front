@@ -10,7 +10,6 @@ export default class NotificationManagement extends Segment {
     }
 
     __loadData__(currentPage) {
-
         co(function *() {
             let resp = yield request.get('/api/xxx');
             console.log(resp);
@@ -51,6 +50,19 @@ export default class NotificationManagement extends Segment {
 
             let { notifications, pagination } = self.__loadData__(pageNum);
             self.flush({notifications, pagination});
+        });
+
+        this.$this.find('#Warn').click(function () {
+           window.app.popover('warn', '我警告一下你！')
+        });
+        this.$this.find('#Error').click(function () {
+            window.app.popover('error', '对不起大哥我错了。')
+        });
+        this.$this.find('#Normal').click(function () {
+            window.app.popover('normal', '我是一个平凡的框框。')
+        });
+        this.$this.find('#Success').click(function () {
+            window.app.popover('success', '热烈庆祝中华人民共和国成立70周年！')
         });
     }
 

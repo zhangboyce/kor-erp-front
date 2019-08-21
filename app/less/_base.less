@@ -149,3 +149,165 @@ html, body {
     margin-top: 30px;
   }
 }
+
+.popover {
+  position: fixed;
+  left: 50%;
+  width: 300px;
+  height: auto;
+  min-height: 50px;
+  z-index: 9999;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 6px -2px rgba(0,0,0,.5);
+  padding: 10px;
+
+  display: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.popover.show {
+  display: flex;
+  animation:
+          show-popover .5s ease-in forwards,
+          hide-popover 2s ease-out 3s forwards;
+}
+
+.popover-hide() {
+  top: 0;
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}
+
+.popover-show() {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes show-popover {
+  from {
+    .popover-hide();
+  }
+  to {
+    .popover-show();
+  }
+}
+@keyframes hide-popover {
+  from {
+    .popover-show();
+  }
+  to {
+    .popover-hide();
+  }
+}
+
+@icon-width: 20px;
+@icon-height: 20px;
+.popover i {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.popover span {
+  font-size: 14px;
+  color: rgba(0,0,0, .7);
+}
+
+.popover.normal i {
+  background: rgb(32, 139, 255);
+  &:before {
+    position: absolute;
+    content: '';
+    width: @icon-width / 10;
+    height: @icon-height / 10;
+    top: @icon-height / 4;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: @icon-width / 10;
+    height: @icon-height / 3;
+    bottom: @icon-height / 4;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: @icon-width;
+    background: #fff;
+  }
+}
+.popover.error i {
+  background: rgb(242, 0, 46);
+
+  &:after,
+  &:before {
+    position: absolute;
+    content: '';
+    width: @icon-width / 10;
+    height: @icon-height / 2;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+  }
+  &:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+.popover.success i {
+  background: rgb(88, 200, 27);
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: @icon-width / 3;
+    height: @icon-height / 2;
+    border: @icon-width / 10 solid #fff;
+    top: 50% - 2px;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+  }
+}
+.popover.warn i {
+  background: rgb(249, 174, 24);
+  &:before {
+    position: absolute;
+    content: '';
+    width: @icon-width / 10;
+    height: @icon-height / 10;
+    left: 50%;
+    bottom: @icon-height / 4;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: @icon-width / 10;
+    height: @icon-height / 3;
+    top: @icon-height / 4;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: @icon-width;
+    background: #fff;
+  }
+}
+
