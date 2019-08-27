@@ -34,18 +34,23 @@
   }
 }
 
+.segment label {
+  margin-right: 30px;
+  margin-left: 10px;
+}
 .segment input,
 .segment .select-wrapper {
   position: relative;
   display: inline-block;
   color: #666;
   min-width: 156px;
-  height: 40px;
+  height: 45px;
   border-radius: 10px;
   border: solid 1px #c1c1c1;
   background-color: #ffffff;
   margin-right: 30px;
   margin-left: 10px;
+  padding-left: 10px;
 }
 
 .segment .select-wrapper {
@@ -87,13 +92,74 @@
     border-bottom: 1px solid @light-grey;
     border-right: 1px solid @light-grey;
   }
+  & th {
+    text-align: center;
+  }
+}
+
+.segment table.editable tbody tr {
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+    background: fade(@tealish, 60%);
+  }
+  &.selected {
+    color: #fff;
+    background: @tealish;
+  }
+}
+
+.segment table + .table-edit-btn {
+  margin-top: 10px;
+  text-align: center;
+
+  & > input {
+    width: 160px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    transition: .3s all ease-in;
+
+    &.add-column {
+      background: @tealish;
+      border-color: @tealish;
+
+      &.disabled {
+        cursor: inherit;
+        background: @light-tealish;
+        border: 1px solid @light-tealish;
+      }
+
+      &:not(.disabled):hover {
+        box-shadow:
+                2px 2px 4px -1px @grey,
+                2px 2px 2px -2px darken(@tealish, 10%) inset;
+      }
+    }
+
+    &.remove-column {
+      background: @red;
+      border-color: @red;
+
+      &.disabled {
+        cursor: inherit;
+        border: 1px solid @light-red;
+        background: @light-red;
+      }
+
+      &:not(.disabled):hover {
+        box-shadow:
+                2px 2px 4px -1px @grey,
+                2px 2px 2px -2px darken(@red, 10%) inset;
+      }
+    }
+  }
 }
 
 .segment button {
   background: #f8f8f8;
   color: #666;
   border: 1px solid @grey;
-  //border-radius: 4px;
   padding: 5px 10px;
   cursor: pointer;
   margin: 0 4px;

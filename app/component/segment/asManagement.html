@@ -1,118 +1,157 @@
 <div class="as-management">
     <div class="panel search">
-        <div>
-            <label>
-                작성일자
-                <input type="text" name="" />
-            </label>
-            <label>
-                작성팀명
-                <input type="text" name="" />
-            </label>
+        <!-- form 1 -->
+        <div class="form1">
+            <form>
+                <label>
+                    <div class="select-wrapper">
+                        <select>
+                            <option value="">2015</option>
+                            <option value="">2016</option>
+                        </select>
+                    </div>
+                </label>
+                <label>
+                    <div class="select-wrapper">
+                        <select>
+                            <option value="">거래처명</option>
+                            <option value="">거래처명</option>
+                        </select>
+                    </div>
+                </label>
+                <label class="wrap">
+                    <div class="select-wrapper">
+                        <select>
+                            <option value="">시즌</option>
+                            <option value="">시즌</option>
+                        </select>
+                    </div>
+                </label>
+                <label>
+                    <div class="select-wrapper">
+                        <select>
+                            <option value="">부서명</option>
+                            <option value="">부서명</option>
+                        </select>
+                    </div>
+                </label>
+                <label>
+                    <div class="select-wrapper">
+                        <select>
+                            <option value="">소속명</option>
+                            <option value="">소속명</option>
+                        </select>
+                    </div>
+                </label>
+                <label>
+                    <input placeholder="성명" type="text" name="" value="성명"/>
+                </label>
+                <button id="search" type="button">button</button>
+            </form>
         </div>
-        <div>
-            <label>
-                초도/신규
-                <div class="select-wrapper">
-                    <select>
-                        <option value="">초도/신규1</option>
-                        <option value="">초도/신규2</option>
-                        <option value="">초도/신규3</option>
-                        <option value="">초도/신규4</option>
-                        <option value="">초도/신규5</option>
-                        <option value="">초도/신규6</option>
-                    </select>
-                </div>
-            </label>
-            <label>
-                품목
-                <div class="select-wrapper">
-                    <select>
-                        <option value="">품목1</option>
-                        <option value="">품목2</option>
-                        <option value="">품목3</option>
-                        <option value="">품목4</option>
-                        <option value="">품목5</option>
-                        <option value="">품목6</option>
-                    </select>
-                </div>
-            </label>
-            <label>
-                지급내역
-                <div class="select-wrapper">
-                    <select>
-                        <option value="">지급내역1</option>
-                        <option value="">지급내역2</option>
-                        <option value="">지급내역3</option>
-                        <option value="">지급내역4</option>
-                        <option value="">지급내역5</option>
-                        <option value="">지급내역6</option>
-                    </select>
-                </div>
-            </label>
+        <!-- form 3 -->
+        <div class="form2">
+            <form>
+                <label>
+                    담당자명
+                    <input placeholder="김자연" type="text" name="" value=""/>
+                </label>
+                <label class="wrap">
+                    담당자연락처
+                    <input placeholder="033-580-4577" type="text" name="" value=""/>
+                </label>
+                <label>
+                    초도배송지
+                    <input placeholder="033-580-4577" type="text" name="" value=""/>
+                </label>
+                <button id="" type="button">button2</button>
+            </form>
         </div>
-        <div>
+        <!-- form 3 -->
+        <div class="form3">
             <label>
-                그룹사명
+                포장순
+                <input type="text" name="" value=""/>
+            </label>
+            <label class="wrap">
+                신청년
+                <i class="date-picker" id="date1" ></i>
+            </label>
+            <label>
+                신규신청일
+                <i class="date-picker" id="date2" ></i>
+            </label>
+            <label class="wrap">
+                신규입력자
+                <input type="text" name="" value=""/>
+            </label>
+            <label>
+                신규송장일
+                <i class="date-picker" id="date3" ></i>
+            </label>
+            <label class="wrap">
+                신규포장일
+                <i class="date-picker" id="date4" ></i>
+            </label>
+            <label>
+                신규송장번호
+                <input type="text" name="" value=""/>
+            </label>
+            <button id="button3" type="button">button3</button>
+        </div>
+        <!-- form 4 -->
+        <div class="form4">
+            <label>
+                거래처명
                 <div class="select-wrapper">
                     <select>
-                        <option value="">그룹사명1</option>
-                        <option value="">그룹사명2</option>
-                        <option value="">그룹사명3</option>
+                        <option value="">거래처명</option>
+                        <option value="">거래처명</option>
                     </select>
                 </div>
             </label>
             <label class="wrap">
+                부속명
+                <div class="select-wrapper">
+                    <select>
+                        <option value="">부속명</option>
+                        <option value="">부속명</option>
+                    </select>
+                </div>
+            </label>
+            <label>
                 소속부서
                 <div class="select-wrapper">
                     <select>
-                        <option value="">소속부서1</option>
-                        <option value="">소속부서2</option>
-                        <option value="">소속부서3</option>
+                        <option value="">소속부서</option>
+                        <option value="">소속부서</option>
+                    </select>
+                </div>
+            </label>
+            <label class="wrap">
+                성별
+                <div class="select-wrapper">
+                    <select>
+                        <option value="">성별</option>
+                        <option value="">성별</option>
                     </select>
                 </div>
             </label>
             <label>
                 성명
-                <input type="text" name="" />
+                <input placeholder="윤형태" type="text" name="" value=""/>
+            </label>
+            <label class="wrap">
+                사원번호
+                <input placeholder="201321" type="text" name="" value=""/>
             </label>
             <label>
-                신장
-                <input type="text" name="" />
+                핸드폰
+                <input placeholder="010-9676-2368" type="text" name="" value=""/>
             </label>
-            <label>
-                직원번호
-                <input type="text" name="" />
-            </label>
-
-            <div class="search-table">
-                <table cellpadding="0" cellspacing="0">
-                    <tr>
-                        <th colspan="3">신규포장 내역</th>
-                    </tr>
-                    <tr>
-                        <td>자켓</td>
-                        <td>77L</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>자켓</td>
-                        <td>77L</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>자켓</td>
-                        <td>77L</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>자켓</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
+            <button id="button4" type="button">button4</button>
         </div>
+        <div class="search-table" id="table1"></div>
     </div>
     <div class="panel add">
         <div>

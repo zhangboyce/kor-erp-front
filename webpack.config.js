@@ -3,13 +3,11 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: {
-        index: './app/index.js'
-    },
+    entry: ["babel-polyfill", './app/index.js'],
     output: {
         publicPath: "http://localhost:8080/public",
         path: path.resolve(__dirname, 'dist/public'),
-        filename: '[name].min.js'
+        filename: 'bundle.min.js'
     },
     devServer: {
         contentBase: './app',
@@ -18,18 +16,39 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
+                    loader: "babel-loader",
+                    options: {
+                        cacheDirectory: true,
+                        plugins: ['transform-decorators-legacy', 'transform-runtime' ],
+                        presets: ['es2015', 'react', 'stage-0']
+                    }
                 }
             },
             {
-                test: /\.less|\.css/,
+                test: /\.css/,
                 use: [
                     "style-loader",
-                    "css-loader",
-                    "less-loader"
+                    "css-loader"
+                ]
+            },
+            {
+                test: /\.less/,
+                use: [
+                    { loader: "style-loader" },
+                    { loader: "css-loader"},
+                    {
+                        loader: "less-loader",
+                        options: {
+                            javascriptEnabled: true,
+                            modifyVars: {
+                                'primary-color': 'rgb(39, 153, 158)',
+                                'link-color': 'rgb(39, 153, 158)',
+                            }
+                        }
+                    }
                 ]
             },
             {

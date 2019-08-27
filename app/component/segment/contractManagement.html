@@ -28,21 +28,25 @@
                 <button id="edit" class="{{ 'disabled' if(current == null) else '' }}">고치다</button>
                 <button id="delete" class="{{ 'disabled' if(current == null) else '' }}">삭제</button>
             </div>
-            <table cellpadding="0" cellspacing="0">
-                <tr>
-                    <th>id</th>
-                    <th>거래처명</th>
-                    <th>제작연도</th>
-                    <th>제작연도</th>
-                </tr>
-                {% for item in results %}
-                <tr data-id="{{ item.id }}" class="{{ 'current' if (current == item.id) else '' }}">
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.consumer }}</td>
-                    <td>{{ item.year }}</td>
-                    <td>{{ item.quarter }}</td>
-                </tr>
-                {% endfor %}
+            <table class="editable" cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>거래처명</th>
+                        <th>제작연도</th>
+                        <th>제작연도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in results %}
+                    <tr data-id="{{ item.id }}" class="{{ 'selected' if (current == item.id) else '' }}">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.consumer }}</td>
+                        <td>{{ item.year }}</td>
+                        <td>{{ item.quarter }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
         <div class="page">
